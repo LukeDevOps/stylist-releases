@@ -1,0 +1,7 @@
+- id: stylist
+  name: stylist
+  description: Check staged assets against the house style guide.
+  entry: stylist-hook.sh
+  language: script
+  pass_filenames: false
+  always_run: true
