@@ -6,5 +6,6 @@
     "name": "Luke Killick"
   },
   "homepage": "https://getstylist.dev",
-  "repository": "https://github.com/lukedevops/stylist-releases"
+  "repository": "https://github.com/lukedevops/stylist-releases",
+  "license": "MIT"
 }

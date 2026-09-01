@@ -46,6 +46,12 @@ key. See https://getstylist.dev/docs/rulesets#check-semantics.
   time and in CI, so anything an agent writes through a shell command
   instead of a file edit still gets caught.
 
+## License
+
+This plugin's code (this directory: `plugin.json`, `hooks.json`, this
+README) is [MIT licensed](LICENSE). The `stylist` binaries and Docker
+image it calls are proprietary and not covered by this license.
+
 ## Enterprise: dashboard & hosted option
 
 The checker above is free to run everywhere. If you want conformance trends,
