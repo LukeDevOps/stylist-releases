@@ -1,0 +1,17 @@
+{
+  "name": "stylist",
+  "owner": {
+    "name": "Luke Killick",
+    "url": "https://getstylist.dev"
+  },
+  "description": "Style and brand-conformance checking for AI-generated assets.",
+  "plugins": [
+    {
+      "name": "stylist",
+      "source": "./plugins/stylist",
+      "description": "Checks AI-generated assets against your house style guide and feeds violations back to Claude so it self-corrects.",
+      "homepage": "https://getstylist.dev",
+      "repository": "https://github.com/lukedevops/stylist-releases"
+    }
+  ]
+}
