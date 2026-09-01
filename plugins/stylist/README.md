@@ -31,6 +31,21 @@ If your ruleset declares `tone:` guidance (voice/tone judged by an LLM), add
 that judge through the `claude` CLI you already have — no server, no API
 key. See https://getstylist.dev/docs/rulesets#check-semantics.
 
+## Use cases
+
+- **Brand consistency at scale** — ban terms like "cheap," enforce your
+  color palette and approved fonts across every doc, landing page, or deck
+  an agent touches.
+- **Catching a rebrand's long tail** — flag old logos, retired colors, or
+  superseded fonts by content, not filename, so they can't sneak back in
+  under a new name.
+- **Voice and tone enforcement** — judge generated copy against your own
+  good/bad examples, with an optional agent-only mode that needs no API
+  key or server (see `tone_agent` above).
+- **A backstop, not just a nudge** — the same rules also run at commit
+  time and in CI, so anything an agent writes through a shell command
+  instead of a file edit still gets caught.
+
 ## Enterprise: dashboard & hosted option
 
 The checker above is free to run everywhere. If you want conformance trends,
