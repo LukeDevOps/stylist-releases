@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "^apply_patch$",
+        "hooks": [{ "type": "command", "command": "stylist hook codex" }]
+      }
+    ]
+  }
+}

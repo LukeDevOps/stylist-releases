@@ -3,7 +3,24 @@
 Checks AI-generated assets (HTML, Markdown, Word, PowerPoint, SVG, images)
 against your house style guide — brand colors, allowed fonts, banned/required
 terms, outdated logos, image resolution — and feeds any violation back to
-Claude so it fixes its own output before you ever see it.
+the agent so it fixes its own output before you ever see it. Works as a
+**Claude Code plugin** and a **Codex CLI plugin** from this same package.
+
+## Install
+
+**Claude Code:**
+
+```
+/plugin marketplace add lukedevops/stylist-releases
+/plugin install stylist
+```
+
+**Codex CLI:**
+
+```
+codex plugin marketplace add lukedevops/stylist-releases
+codex plugin install stylist
+```
 
 ## Requirements
 
@@ -19,12 +36,13 @@ https://getstylist.dev/docs/rulesets for the format, or start from
 
 ## What this plugin does
 
-Installs a `PostToolUse` hook that runs on every `Write`/`Edit`/`MultiEdit`.
-Checkable assets are checked against your ruleset; blocking violations are
-returned to Claude on its next turn so it corrects the file itself, while
-advisory-only results (like outdated-logo detection) are left silent for the
-agent and only surface in the dashboard or CI. If `stylist` isn't installed
-or the check can't run, the hook fails open — it never blocks your work.
+Installs a `PostToolUse` hook — on every `Write`/`Edit`/`MultiEdit` in Claude
+Code, or every `apply_patch` in Codex. Checkable assets are checked against
+your ruleset; blocking violations are returned to the agent on its next turn
+so it corrects the file itself, while advisory-only results (like
+outdated-logo detection) are left silent for the agent and only surface in
+the dashboard or CI. If `stylist` isn't installed or the check can't run,
+the hook fails open — it never blocks your work.
 
 If your ruleset declares `tone:` guidance (voice/tone judged by an LLM), add
 `tone_agent: claude-cli` to `.stylist.yaml` (requires stylist v1.0.2+) to run
@@ -48,8 +66,9 @@ key. See https://getstylist.dev/docs/rulesets#check-semantics.
 
 ## License
 
-This plugin's code (this directory: `plugin.json`, `hooks.json`, this
-README) is [MIT licensed](LICENSE). The `stylist` binaries and Docker
+This plugin's code (this directory — `.claude-plugin/plugin.json`,
+`.codex-plugin/plugin.json`, `hooks/hooks.json`, `hooks/codex-hooks.json`,
+this README) is [MIT licensed](LICENSE). The `stylist` binaries and Docker
 image it calls are proprietary and not covered by this license.
 
 ## Enterprise: dashboard & hosted option

@@ -1,0 +1,12 @@
+{
+  "name": "stylist",
+  "description": "Checks AI-generated assets (HTML, Markdown, Word, PowerPoint, SVG, images) against your house style guide and feeds violations back to Codex, so it fixes its own output before you see it.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Luke Killick"
+  },
+  "homepage": "https://getstylist.dev",
+  "repository": "https://github.com/lukedevops/stylist-releases",
+  "license": "MIT",
+  "hooks": "./hooks/codex-hooks.json"
+}
